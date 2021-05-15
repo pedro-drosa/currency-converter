@@ -38,7 +38,7 @@ $ yarn start
 
 - `findCurrenciesAvailable(currencies: array)` Retorna um array com o nome das moedas disponíveis.
 - `findPriceByName(name: string, currencies: array)` Retorna o valor atual de uma moeda.
-- `findCodeByName(name: string, currencies: array)` Retorna o código de o código de uma moeda.
+- `findCodeByName(name: string, currencies: array)` Retorna o código de uma moeda.
 - `convertValue(quantity:int , source:decimal, target:decimal)` Retorna o valor de uma operação de câmbio.
 - `addRate(value:int, rate:int || decimal)` Retorna a adição de uma determinada taxa à um valor.
 
