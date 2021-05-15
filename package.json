@@ -1,0 +1,17 @@
+{
+  "name": "calculadora",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "pedro-drosa <pedro_drosa@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "prettier": "2.3.0"
+  },
+  "dependencies": {
+    "enquirer": "^2.3.6"
+  }
+}
