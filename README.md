@@ -14,8 +14,6 @@ O script recebe a moeda de origem e a moeda de destino de uma lista previamente 
 ### Pré-requisitos
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: [Git](https://git-scm.com), [NodeJS](https://nodejs.org), [Yarn](https://classic.yarnpkg.com).
 
-<img alt="Mockup" src="https://res.cloudinary.com/pedro-drosa/image/upload/v1621042933/exchange-calculator_lheepo.gif">
-
 ### **🏁 Execute o projeto localmente:**
 
 ``` bash 
@@ -32,6 +30,9 @@ $ yarn
 $ yarn start
 
 ```
+
+<img alt="Mockup" src="https://res.cloudinary.com/pedro-drosa/image/upload/v1621042933/exchange-calculator_lheepo.gif">
+
 
 ### **Métodos da classe: Calculator.js**
 
