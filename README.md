@@ -1,8 +1,8 @@
-# Calculadora de Câmbio
+# Conversor de moedas
 
 ### **🚀 Sobre o desafio**
 
-O script recebe a moeda de origem e a moeda de destino de uma lista previamente cadastrada, além do valor a ser convertido, e retorna o valor convertido com precisão de centavos.
+O script recebe a moeda de origem e de destino de uma lista previamente cadastrada, e retorna o valor convertido com precisão de centavos.
 
 ### 🛠 Tecnologias:
 
