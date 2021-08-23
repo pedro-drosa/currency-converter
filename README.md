@@ -1,5 +1,4 @@
 # Calculadora de Câmbio
-Desafio 01: Jornada Labs - Havan 2021
 
 ### **🚀 Sobre o desafio**
 
