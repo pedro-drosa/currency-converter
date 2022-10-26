@@ -1,5 +1,5 @@
-const { prompt } = require('enquirer');
-const questions = require('../shared/questions');
+import { prompt } from 'enquirer';
+import questions from '../shared/questions';
 
 class Calculator {
   constructor(currencies) {
@@ -27,7 +27,6 @@ class Calculator {
   findCodeByName(name, currencies) {
     try {
       const [currency] = currencies.filter((currency) => {
-
         return currency.name === name;
       });
 
@@ -62,7 +61,7 @@ class Calculator {
       for (let i = 0; i <= 1; i++) {
         questions[i].choices = this.currencies;
       }
-      
+
       let { source, target, quantity } = await prompt(questions);
 
       return { source, target, quantity };
