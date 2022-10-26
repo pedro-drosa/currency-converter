@@ -5,10 +5,12 @@
   "author": "pedro-drosa <pedro_drosa@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "git-commit-msg-linter": "^4.2.1",
+    "husky": "^8.0.1",
     "nodemon": "^2.0.7",
     "prettier": "2.3.0"
   },
