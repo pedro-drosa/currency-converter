@@ -8,6 +8,7 @@
     "start": "node src/index.js"
   },
   "devDependencies": {
+    "git-commit-msg-linter": "^4.2.1",
     "nodemon": "^2.0.7",
     "prettier": "2.3.0"
   },
