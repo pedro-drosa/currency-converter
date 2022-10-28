@@ -1,42 +1,43 @@
-const { prompt } = require('enquirer');
-const questions = require('../shared/questions');
+import { prompt } from 'enquirer';
+import questions from '../shared/questions';
 
 class Calculator {
   constructor(currencies) {
     this.currencies = currencies;
   }
 
-  findCurrenciesAvailable(currencies) {
-    return currencies.map((currency) => currency.name);
+  findCurrenciesAvailable() {
+    return this.currencies.map((currency) => currency.name);
   }
 
-  findPriceByName(name, currencies) {
-    try {
-      const [currency] = currencies.filter((currency) => {
-        return currency.name === name;
-      });
+  findPriceByName(name) {
+    const [currency] = this.currencies.filter(
+      (availableCurrency) => availableCurrency.name === name
+    );
 
-      return parseFloat(currency.price);
-    } catch (err) {
-      console.log(
-        `Currency "${name}" not found 👻, check the data and try again.`
+    if (!currency) {
+      throw new Error(
+        `Currency "${name}" not found, check the data and try again.`
       );
     }
+
+    return parseFloat(currency.price);
   }
 
-  findCodeByName(name, currencies) {
-    try {
-      const [currency] = currencies.filter((currency) => {
+  findCodeByName(name) {
+    const [currency] = this.currencies.filter(
+      (availableCurrency) => availableCurrency.name === name
+    );
 
-        return currency.name === name;
-      });
+    if (!currency)
+      throw new Error(
+        `Code "${name}" not found, check the data and try again.`
+      );
 
-      return currency.code;
-    } catch (err) {
-      console.log(`Code "${name}" not found 👻, check the data and try again.`);
-    }
+    return currency.code;
   }
 
+  // eslint-disable-next-line consistent-return
   convertValues(quantity, source, target) {
     try {
       const sourcePrice = this.findPriceByName(source, this.currencies);
@@ -47,6 +48,7 @@ class Calculator {
 
       return `${result.toFixed(2)} - ${code}`;
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log('Oh no 🙈, an error occurred, check the data and try again');
     }
   }
@@ -54,23 +56,28 @@ class Calculator {
   async calculate() {
     const { quantity, source, target } = await this.getValuesFromCLI();
     const result = this.convertValues(quantity, source, target);
+    // eslint-disable-next-line no-console
     console.log(result);
   }
 
+  // eslint-disable-next-line consistent-return
   async getValuesFromCLI() {
     try {
+      // eslint-disable-next-line
       for (let i = 0; i <= 1; i++) {
         questions[i].choices = this.currencies;
       }
-      
-      let { source, target, quantity } = await prompt(questions);
+
+      const { source, target, quantity } = await prompt(questions);
 
       return { source, target, quantity };
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.log(`🙄 Ops, it shouldn't happen.`);
     }
   }
 
+  // eslint-disable-next-line class-methods-use-this
   addRate(value, rate) {
     const exchangeRate = value * (rate / 100);
 
@@ -78,4 +85,4 @@ class Calculator {
   }
 }
 
-module.exports = Calculator;
+export default Calculator;
