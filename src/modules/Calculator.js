@@ -10,21 +10,18 @@ class Calculator {
     return this.currencies.map((currency) => currency.name);
   }
 
-  // eslint-disable-next-line class-methods-use-this, consistent-return
-  findPriceByName(name, currencies) {
-    try {
-      const [currency] = currencies.filter(
-        // eslint-disable-next-line no-shadow
-        (currency) => currency.name === name
-      );
+  findPriceByName(name) {
+    const [currency] = this.currencies.filter(
+      (availableCurrency) => availableCurrency.name === name
+    );
 
-      return parseFloat(currency.price);
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.log(
-        `Currency "${name}" not found 👻, check the data and try again.`
+    if (!currency) {
+      throw new Error(
+        `Currency "${name}" not found, check the data and try again.`
       );
     }
+
+    return parseFloat(currency.price);
   }
 
   // eslint-disable-next-line class-methods-use-this, consistent-return
