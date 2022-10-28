@@ -1,3 +1,9 @@
+/* eslint-disable no-console */
+/* eslint-disable no-plusplus */
+/* eslint-disable consistent-return */
+/* eslint-disable no-shadow */
+/* eslint-disable class-methods-use-this */
+
 import { prompt } from 'enquirer';
 import questions from '../shared/questions';
 
@@ -12,9 +18,9 @@ class Calculator {
 
   findPriceByName(name, currencies) {
     try {
-      const [currency] = currencies.filter((currency) => {
-        return currency.name === name;
-      });
+      const [currency] = currencies.filter(
+        (currency) => currency.name === name
+      );
 
       return parseFloat(currency.price);
     } catch (err) {
@@ -26,9 +32,9 @@ class Calculator {
 
   findCodeByName(name, currencies) {
     try {
-      const [currency] = currencies.filter((currency) => {
-        return currency.name === name;
-      });
+      const [currency] = currencies.filter(
+        (currency) => currency.name === name
+      );
 
       return currency.code;
     } catch (err) {
@@ -62,7 +68,7 @@ class Calculator {
         questions[i].choices = this.currencies;
       }
 
-      let { source, target, quantity } = await prompt(questions);
+      const { source, target, quantity } = await prompt(questions);
 
       return { source, target, quantity };
     } catch (err) {
@@ -77,4 +83,4 @@ class Calculator {
   }
 }
 
-module.exports = Calculator;
+export default Calculator;

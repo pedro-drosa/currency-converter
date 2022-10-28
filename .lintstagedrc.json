@@ -1,4 +1,4 @@
 {
-  "*.js": ["npm run test:staged"],
+  "*.js": ["npm run test:staged", "eslint 'src/**' --fix"],
   "**/*": "prettier  --write --ignore-unknown"
 }
