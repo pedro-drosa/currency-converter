@@ -24,19 +24,17 @@ class Calculator {
     return parseFloat(currency.price);
   }
 
-  // eslint-disable-next-line class-methods-use-this, consistent-return
-  findCodeByName(name, currencies) {
-    try {
-      const [currency] = currencies.filter(
-        // eslint-disable-next-line no-shadow
-        (currency) => currency.name === name
+  findCodeByName(name) {
+    const [currency] = this.currencies.filter(
+      (availableCurrency) => availableCurrency.name === name
+    );
+
+    if (!currency)
+      throw new Error(
+        `Code "${name}" not found, check the data and try again.`
       );
 
-      return currency.code;
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.log(`Code "${name}" not found 👻, check the data and try again.`);
-    }
+    return currency.code;
   }
 
   // eslint-disable-next-line consistent-return
