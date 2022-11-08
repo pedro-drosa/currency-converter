@@ -1,12 +1,6 @@
 export default [
   {
     type: 'select',
-    name: 'source',
-    message: 'Qual moeda de origem?',
-    choices: [],
-  },
-  {
-    type: 'select',
     name: 'target',
     message: 'Qual moeda deseja comprar?',
     choices: [],
@@ -14,6 +8,6 @@ export default [
   {
     type: 'input',
     name: 'quantity',
-    message: 'Quantia Desejada:',
+    message: 'Informe a quantidade desejada:',
   },
 ];
