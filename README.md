@@ -1,21 +1,31 @@
-# Conversor de moedas
+# Conversor de Moedas
 
-### **🚀 Sobre o desafio**
+## 🎯 Projeto
 
-O script recebe a moeda de origem e de destino de uma lista previamente cadastrada, e retorna o valor convertido com precisão de centavos.
+O script lista as moedas disponíveis de uma lista previamente cadastrada,
+O usuário informa a quantidade em reais e recebe o valor convertido com precisão de centavos.
 
-### 🛠 Tecnologias:
+## 🛠 Tecnologias
 
-- Javascript
-- NodeJS
-- Yarn
+- [NodeJS](https://nodejs.org)
+- [Yarn](https://classic.yarnpkg.com)
+- [Jest](https://jestjs.io/pt-BR/)
+- [Husky](https://typicode.github.io/husky/#/)
+- [Lint Staged](https://www.npmjs.com/package/lint-staged)
+- [Prettier](https://prettier.io/)
+- [Eslint](https://eslint.org/)
 
-### Pré-requisitos
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: [Git](https://git-scm.com), [NodeJS](https://nodejs.org), [Yarn](https://classic.yarnpkg.com).
+## ⚡ Pré-requisitos
+
+Você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+
+- [Git](https://git-scm.com)
+- [NodeJS](https://nodejs.org)
+- [Yarn](https://classic.yarnpkg.com) ou [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 ### **🏁 Execute o projeto localmente:**
 
-``` bash 
+```bash
 # Clone este repositório
 $ git clone https://github.com/pedro-drosa/exchange-calculator.git
 
@@ -27,24 +37,7 @@ $ yarn
 
 # Execute a aplicação
 $ yarn start
-
 ```
-
-<img alt="Mockup" src="https://res.cloudinary.com/pedro-drosa/image/upload/v1621042933/exchange-calculator_lheepo.gif">
-
-
-### **Métodos da classe: Calculator.js**
-
-- `findCurrenciesAvailable(currencies: array)` Retorna um array com o nome das moedas disponíveis.
-- `findPriceByName(name: string, currencies: array)` Retorna o valor atual de uma moeda.
-- `findCodeByName(name: string, currencies: array)` Retorna o código de uma moeda.
-- `convertValue(quantity:int , source:decimal, target:decimal)` Retorna o valor de uma operação de câmbio.
-- `addRate(value:int, rate:int || decimal)` Retorna a adição de uma determinada taxa à um valor.
-
-### Os métodos abaixo servem para a interação em um prompt
-
-- `async calculate()` Retorna o valor de uma operação de câmbio com base nos valores enviados no `prompt`.
-- `async getValuesFromCLI()` Recebe os valores digitados no `prompt`.
 
 ## **📝 Licença**
 
