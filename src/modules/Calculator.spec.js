@@ -5,19 +5,14 @@ const calculator = new Calculator(currencies);
 
 describe('Return the list of available currencies', () => {
   test('findCurrenciesAvailable > return the name of available currencies', () => {
-    const output = ['Real', 'Peso', 'Dólar', 'Euro', 'Libra', 'Yuan'];
+    const output = ['Peso', 'Dólar', 'Euro', 'Reino Unido Libra', 'Yuan'];
     expect(calculator.findCurrenciesAvailable(currencies)).toEqual(output);
   });
 });
 
 describe('Return the current currency value', () => {
-  test('findPriceByName > return brazilian real value', () => {
-    const output = 1;
-    expect(calculator.findPriceByName('Real')).toEqual(output);
-  });
-
   test('findPriceByName > return dollar value', () => {
-    const output = 5.3079;
+    const output = 5.1716;
     expect(calculator.findPriceByName('Dólar')).toEqual(output);
   });
 
@@ -34,14 +29,22 @@ describe('return currency code', () => {
     expect(calculator.findCodeByName('Dólar')).toEqual(output);
   });
 
-  test('findCodeByName > return the brazilian real code', () => {
-    const output = 'BRL';
-    expect(calculator.findCodeByName('Real')).toEqual(output);
-  });
-
   test('findCodeByName > return an error if the currency does not exist', () => {
     expect(() => calculator.findCodeByName('f4k3C01n')).toThrowError(
       new Error(`Code "f4k3C01n" not found, check the data and try again.`)
+    );
+  });
+});
+
+describe('convert Values', () => {
+  test('convert > real to dolar ', () => {
+    const output = 5.17;
+    expect(calculator.convert('Dólar', 1)).toEqual(output);
+  });
+
+  test('convert > empty value', () => {
+    expect(() => calculator.convert(' ', 1)).toThrowError(
+      new Error('Enter a valid currency.')
     );
   });
 });
