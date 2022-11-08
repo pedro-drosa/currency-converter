@@ -1,32 +1,27 @@
 export default [
   {
-    code: 'BRL',
-    name: 'Real',
-    price: '1',
-  },
-  {
     code: 'ARS',
     name: 'Peso',
-    price: '0.05646',
+    price: '0.0322',
   },
   {
     code: 'USD',
     name: 'Dólar',
-    price: '5.3079',
+    price: '5.1716',
   },
   {
     code: 'EUR',
     name: 'Euro',
-    price: '6.4136',
+    price: '5.1817',
   },
   {
-    code: 'LBR',
-    name: 'Libra',
+    code: 'GBP',
+    name: 'Reino Unido Libra',
     price: '0.34',
   },
   {
-    code: 'CNY',
+    code: 'JPY',
     name: 'Yuan',
-    price: '0.8229',
+    price: '0.03504',
   },
 ];
